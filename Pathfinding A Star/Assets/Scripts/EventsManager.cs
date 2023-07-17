@@ -12,6 +12,9 @@ public class EventsManager : MonoBehaviour
     public delegate void OnTileTypeSelectedDelegate(TileType tileType);
     public event OnTileTypeSelectedDelegate OnTileTypeSelected;
 
+    public delegate void OnButtonClickedFindPathDelegate();
+    public event OnButtonClickedFindPathDelegate OnButtonClickedFindPath;
+
     //==========================================================================
 
     private void Awake()
@@ -44,6 +47,11 @@ public class EventsManager : MonoBehaviour
     }
 
     //==========================================================================
+
+    public void ButtonClickedFindPath()
+    {
+        OnButtonClickedFindPath?.Invoke();
+    }
 
     //==========================================================================
 }
